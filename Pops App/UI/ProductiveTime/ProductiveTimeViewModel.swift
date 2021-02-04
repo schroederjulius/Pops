@@ -78,6 +78,15 @@ final class ProductiveTimeViewModel {
         if motionManager.accelerometerData!.acceleration.z > 0.25 {
             //delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityStatements[0].header
             //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
+            
+            
+            //let cancelSessionButton = UIButton()
+            //func setupCancelSessionButton() {
+                //cancelSessionButton.titleLabel?.textColor = UIColor.black //used to be Palette.black.color
+               //cancelSessionButton.heightAnchor.constraint(equalToConstant: 9999).isActive = true
+                ///}
+            
+            
             userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
         }
