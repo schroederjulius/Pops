@@ -208,7 +208,7 @@ extension ProductiveTimeViewController {
 
     func setupCharacterMessageHeader() {
         characterMessageHeader.numberOfLines = 0
-        characterMessageHeader.textColor = UIColor.white
+        characterMessageHeader.textColor = UIColor.black //used to be UIColor.white
         characterMessageHeader.textAlignment = .left
         characterMessageHeader.font = UIFont(name: "Avenir-Black", size: 14.0)
 
@@ -259,7 +259,7 @@ extension ProductiveTimeViewController {
             cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
         }
     
-        cancelSessionButton.titleLabel?.textColor = Palette.white.color
+        cancelSessionButton.titleLabel?.textColor = Palette.black.color //used to be Palette.white.color
         cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
       
         cancelSessionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -273,7 +273,7 @@ extension ProductiveTimeViewController {
         productiveTimeLabel.isHidden = true
         productiveTimeLabel.textAlignment = .center
         productiveTimeLabel.font = UIFont(name: "Avenir-Heavy", size: 20)
-        productiveTimeLabel.textColor = UIColor.white
+        productiveTimeLabel.textColor = UIColor.black //used to be UIColor.white
         
         productiveTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         productiveTimeLabel.topAnchor.constraint(equalTo: cancelSessionButton.topAnchor, constant: -viewHeight * (120/667)).isActive = true
