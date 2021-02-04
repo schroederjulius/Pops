@@ -79,11 +79,11 @@ final class ProductiveTimeViewModel {
             delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityStatements[0].header
             delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
             userWasPenalized = false
-            UIScreen.main.brightness = 0.01
+            UIScreen.main.brightness = 0.0 // used to be 0.01
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
-            UIScreen.main.brightness = 0.75
+            UIScreen.main.brightness = 0.3 // used to be 0.75
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 &&
