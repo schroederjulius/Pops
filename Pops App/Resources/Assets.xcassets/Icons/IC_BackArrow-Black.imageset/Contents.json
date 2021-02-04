@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "IC_Back Arrow Black.png",
+      "filename" : "IC_BackButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "IC_Back Arrow Black@2x.png",
+      "filename" : "IC_BackButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "IC_Back Arrow Black@3x.png",
+      "filename" : "IC_BackButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
