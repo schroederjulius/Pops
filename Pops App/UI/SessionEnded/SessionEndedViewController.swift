@@ -137,7 +137,7 @@ extension SessionEndedViewController {
 
     func setupCharacterMessageHeader() {
         characterMessageHeader.numberOfLines = 0
-        characterMessageHeader.textColor = UIColor.black
+        characterMessageHeader.textColor = UIColor.white //used to be UIColor.black
         characterMessageHeader.textAlignment = .left
         characterMessageHeader.font = UIFont(name: "Avenir-Black", size: 14.0)
 

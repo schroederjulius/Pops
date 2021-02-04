@@ -105,7 +105,7 @@ class HomeSettingsViewController: UIViewController {
 
     func setupCoachNameLabel() {
         coachNameLabel.numberOfLines = 0
-        coachNameLabel.textColor = UIColor.black
+        coachNameLabel.textColor = UIColor.white //FARBENFROH used to be UIColor.black
         coachNameLabel.textAlignment = .left
         coachNameLabel.font = UIFont(name: "Avenir-Black", size: 14.0)
 
