@@ -47,7 +47,7 @@ class SetSessionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black //used to be UIColor.white
         
     }
     
@@ -176,7 +176,7 @@ extension SetSessionViewController: UICollectionViewDataSource, UICollectionView
 extension SetSessionViewController {
 
     func setupHeaderView() {
-        headerView.backgroundColor = Palette.salmon.color
+        headerView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         view.addSubview(headerView)
 
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -206,7 +206,7 @@ extension SetSessionViewController {
     func setupCoachWindow() {
         view.addSubview(coachWindowView)
         coachWindowView.translatesAutoresizingMaskIntoConstraints = false
-        coachWindowView.backgroundColor = Palette.salmon.color
+        coachWindowView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         coachWindowView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         coachWindowView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80.0).isActive = true
         coachWindowView.heightAnchor.constraint(equalToConstant: 120).isActive = true
@@ -309,7 +309,7 @@ extension SetSessionViewController {
     }
     
     func setupCollectionView() {
-        selectHourCollectionView.backgroundColor = UIColor.white
+        selectHourCollectionView.backgroundColor = UIColor.black //used to be white
         selectHourCollectionView.allowsMultipleSelection = false
         selectHourCollectionView.showsHorizontalScrollIndicator = false
         selectHourCollectionView.delegate = self
