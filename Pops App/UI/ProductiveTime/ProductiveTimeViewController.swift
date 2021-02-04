@@ -37,6 +37,9 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
