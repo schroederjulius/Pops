@@ -41,6 +41,10 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
         return true
     }
 
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ProductiveTimeViewModel(vc: self)
