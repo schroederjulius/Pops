@@ -262,7 +262,7 @@ extension ProductiveTimeViewController {
             cancelSessionButton.setTitle("cancel session", for: .normal)
             cancelSessionButton.addTarget(self, action: #selector(cancelSession), for: .touchUpInside)
         } else {
-            cancelSessionButton.setTitle("im weak", for: .normal)
+            cancelSessionButton.setTitle(" ", for: .normal)
             cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
         }
     
@@ -300,7 +300,7 @@ extension ProductiveTimeViewController {
     }
     
     func animateCancelToWeak() {
-        self.cancelSessionButton.setTitle("im weak", for: .normal)
+        self.cancelSessionButton.setTitle(" ", for: .normal)
         self.cancelSessionButton.titleLabel?.text = "im weak"
         self.cancelSessionButton.titleLabel?.textColor = Palette.lightGrey.color
         

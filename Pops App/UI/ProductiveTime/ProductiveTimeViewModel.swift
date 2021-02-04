@@ -94,7 +94,7 @@ final class ProductiveTimeViewModel {
             //delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityReprimands[0].header
             //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityReprimands[0].body
             
-            userWasPenalized = true
+            userWasPenalized = true //used to be true
         }
         
         if cancelCountdown > 0 {
