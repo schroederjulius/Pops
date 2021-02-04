@@ -14,7 +14,7 @@ enum Palette {
         case .grey: return UIColor(hex: 0xA5A5A5)
         case .white: return UIColor(hex: 0xffffff)
         case .lightGrey: return UIColor(hex: 0xF4F4F4)
-        case .darkHeader: return UIColor(hex: 0x0A0A0A)
+        case .darkHeader: return UIColor(hex: 0x000000)
         case .salmon: return UIColor(hex: 0xFF8484)
         case .green: return UIColor(hex: 0x35CE8D)
         case .navy: return UIColor(hex: 0x385C75)
