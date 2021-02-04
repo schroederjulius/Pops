@@ -173,7 +173,7 @@ extension ProductiveTimeViewController {
     
     func setupProgressBar() {
         view.addSubview(progressBar)
-        progressBar.backgroundColor = Palette.salmon.color
+        progressBar.backgroundColor = UIColor.black //used to be Palette.salmon.color
         
         progressBar.translatesAutoresizingMaskIntoConstraints = false
         progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -186,7 +186,7 @@ extension ProductiveTimeViewController {
     func setupCoachWindow() {
         view.addSubview(coachWindowView)
         coachWindowView.translatesAutoresizingMaskIntoConstraints = false
-        coachWindowView.backgroundColor = Palette.salmon.color
+        coachWindowView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         coachWindowView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         coachWindowView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80.0).isActive = true
         coachWindowView.heightAnchor.constraint(equalToConstant: 120).isActive = true

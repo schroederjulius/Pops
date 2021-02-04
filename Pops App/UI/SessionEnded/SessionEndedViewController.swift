@@ -99,7 +99,7 @@ class SessionEndedViewController: UIViewController {
 extension SessionEndedViewController {
 
     func setupHeaderView() {
-        headerView.backgroundColor = Palette.salmon.color
+        headerView.backgroundColor = UIColor.black //used to be Palette.salmon.color
 
         view.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ extension SessionEndedViewController {
     func setupCoachWindow() {
         view.addSubview(coachWindowView)
         coachWindowView.translatesAutoresizingMaskIntoConstraints = false
-        coachWindowView.backgroundColor = Palette.salmon.color
+        coachWindowView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         coachWindowView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         coachWindowView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80.0).isActive = true
         coachWindowView.heightAnchor.constraint(equalToConstant: 120).isActive = true

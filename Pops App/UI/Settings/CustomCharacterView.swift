@@ -38,7 +38,7 @@ class CustomCharacterView: UIView {
     }
     
     func setupCircleBackgroud() {
-        circleBackgroundView.backgroundColor = Palette.lightGrey.color
+        circleBackgroundView.backgroundColor = UIColor.white //used to be Palette.lightGrey.color
         self.addSubview(circleBackgroundView)
         
         circleBackgroundView.translatesAutoresizingMaskIntoConstraints = false

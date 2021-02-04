@@ -47,14 +47,14 @@ class HomeSettingsViewController: UIViewController {
         switch usersCurrentCoach {
         case "Pops":
             baba.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            pops.circleBackgroundView.backgroundColor = Palette.salmon.color
+            pops.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
             chad.circleBackgroundView.backgroundColor = Palette.lightGrey.color
         case "Chad":
             baba.circleBackgroundView.backgroundColor = Palette.lightGrey.color
             pops.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            chad.circleBackgroundView.backgroundColor = Palette.salmon.color
+            chad.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         case "Baba":
-            baba.circleBackgroundView.backgroundColor = Palette.salmon.color
+            baba.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
             pops.circleBackgroundView.backgroundColor = Palette.lightGrey.color
             chad.circleBackgroundView.backgroundColor = Palette.lightGrey.color
         default:

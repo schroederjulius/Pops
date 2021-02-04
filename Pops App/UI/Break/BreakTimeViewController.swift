@@ -37,7 +37,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     override func viewDidLoad() {
         viewModel = BreakTimeViewModel(delegate: self, progressBarDelegate: self)
         super.viewDidLoad()
-        view.backgroundColor = UIColor.black // used to be UIColor.white
+        view.backgroundColor = UIColor.black //used to be UIColor.white
 
         setupProgressBar()
         setupSettingsButton()
@@ -58,7 +58,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
         viewModel.delegate = self
         animateCoachPopup()
         viewModel.dataStore.defaults.set(true, forKey: "returningUser")
-        UIScreen.main.brightness = 0.75
+        UIScreen.main.brightness = 0.00 //used to be 0.75
     }
     
     @objc func appEnteredForeground() {
@@ -154,7 +154,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
 extension BreakTimeViewController {
     func setupProgressBar() {
         view.addSubview(progressBar)
-        progressBar.backgroundColor = Palette.grey.color //used to be Palette.salmon.color
+        progressBar.backgroundColor = UIColor.white //used to be Palette.grey.color
         
         progressBar.translatesAutoresizingMaskIntoConstraints = false
         progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
@@ -180,7 +180,7 @@ extension BreakTimeViewController {
     func setupCoachWindow() {
         view.addSubview(coachWindowView)
         coachWindowView.translatesAutoresizingMaskIntoConstraints = false
-        coachWindowView.backgroundColor = Palette.salmon.color
+        coachWindowView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         coachWindowView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         coachWindowView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80.0).isActive = true
         coachWindowView.heightAnchor.constraint(equalToConstant: 120).isActive = true
