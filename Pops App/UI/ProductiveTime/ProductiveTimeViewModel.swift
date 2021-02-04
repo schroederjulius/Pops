@@ -189,8 +189,8 @@ final class ProductiveTimeViewModel {
         if productivityTimerCounter > 1 && motionManager.accelerometerData!.acceleration.z < 0.0 {
             
             if !(dataStore.user.currentSession?.mightCancelSession)! {
-                delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityReprimands[0].header
-                delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityReprimands[0].body
+                //delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityReprimands[0].header
+                //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityReprimands[0].body
             }
             
         }
