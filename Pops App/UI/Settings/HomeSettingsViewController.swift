@@ -23,7 +23,7 @@ class HomeSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black // used to be UIColor.white
         setupHeaderView()
         setupCancelSettingsButton()        
         setupCharacterViews()
@@ -153,7 +153,7 @@ class HomeSettingsViewController: UIViewController {
 extension HomeSettingsViewController {
     
     func setupHeaderView() {
-        headerView.backgroundColor = Palette.salmon.color
+        headerView.backgroundColor = UIColor.black //used to be Palette.salmon.color
         
         view.addSubview(headerView)
         headerView.translatesAutoresizingMaskIntoConstraints = false

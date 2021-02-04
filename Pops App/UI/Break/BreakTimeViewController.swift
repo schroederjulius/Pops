@@ -37,7 +37,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     override func viewDidLoad() {
         viewModel = BreakTimeViewModel(delegate: self, progressBarDelegate: self)
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black // used to be UIColor.white
 
         setupProgressBar()
         setupSettingsButton()
@@ -154,7 +154,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
 extension BreakTimeViewController {
     func setupProgressBar() {
         view.addSubview(progressBar)
-        progressBar.backgroundColor = Palette.salmon.color
+        progressBar.backgroundColor = Palette.grey.color //used to be Palette.salmon.color
         
         progressBar.translatesAutoresizingMaskIntoConstraints = false
         progressBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true

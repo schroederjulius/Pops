@@ -33,7 +33,7 @@ class SettingsViewController: UIViewController, DisplayBreakTimerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.black // used to be UIColor.white
         setupEndSessionView()
         setupEndBreakView()
     }
