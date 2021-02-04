@@ -76,8 +76,8 @@ final class ProductiveTimeViewModel {
         print("productivity timer: \(productivityTimerCounter)")
         
         if motionManager.accelerometerData!.acceleration.z > 0.25 {
-            delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityStatements[0].header
-            delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
+            //delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityStatements[0].header
+            //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
             userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
         }
@@ -91,8 +91,8 @@ final class ProductiveTimeViewModel {
             productivityTimerCounter < (dataStore.user.currentCoach.difficulty.baseProductivityLength - 60) &&
             userWasPenalized == false {
             
-            delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityReprimands[0].header
-            delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityReprimands[0].body
+            //delegate.characterMessageHeader.text = dataStore.user.currentCoach.productivityReprimands[0].header
+            //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityReprimands[0].body
             
             userWasPenalized = true
         }
