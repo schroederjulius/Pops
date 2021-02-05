@@ -280,7 +280,7 @@ extension ProductiveTimeViewController {
         productiveTimeLabel.isHidden = true
         productiveTimeLabel.textAlignment = .center
         productiveTimeLabel.font = UIFont(name: "Avenir-Heavy", size: 20)
-        productiveTimeLabel.textColor = UIColor.black //used to be UIColor.black //countdown clock
+        productiveTimeLabel.textColor = UIColor.white //used to be UIColor.black //countdown clock
         
         productiveTimeLabel.translatesAutoresizingMaskIntoConstraints = false
         productiveTimeLabel.topAnchor.constraint(equalTo: cancelSessionButton.topAnchor, constant: -viewHeight * (120/667)).isActive = true

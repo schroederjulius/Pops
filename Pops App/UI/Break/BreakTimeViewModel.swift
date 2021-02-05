@@ -11,6 +11,7 @@ protocol BreakTimeViewModelDelegate: class {
     var characterMessageHeader: UILabel {get set}
     var characterMessageBody: UILabel {get set}
     var progressBar: UILabel {get set}
+    var settingsButton: UIButton {get set}
 }
 
 protocol BreakTimeViewModelProgressBarDelegate: class {
@@ -23,7 +24,7 @@ protocol DisplayBreakTimerDelegate: class {
 }
 
 final class BreakTimeViewModel {
-    
+    //let settingsButton = UIButton()
     let dataStore = DataStore.singleton
     let motionManager = CMMotionManager()
     weak var delegate: BreakTimeViewModelDelegate!
@@ -100,29 +101,6 @@ final class BreakTimeViewModel {
         dataStore.user.currentSession?.startSessionTimer()
         }
     
-    /////////////////////////////////////
-    
-    /////////////////////////////////////
-    
-    /////////////////////////////////////
-    /////////////////////////////////////
-    
-    /////////////////////////////////////
-    
-    /////////////////////////////////////
-    /////////////////////////////////////
-    
-    /////////////////////////////////////
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     func breakTimerAction() {
@@ -166,10 +144,6 @@ final class BreakTimeViewModel {
         
         //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
             //breakTimerCounter > 65 //&&
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        
-        
         
         
         
@@ -245,8 +219,9 @@ final class BreakTimeViewModel {
             //delegate.productiveTimeLabel.textColor = UIColor.black
             delegate.characterMessageHeader.textColor = UIColor.black
             delegate.progressBar.backgroundColor = UIColor.black
-            delegate.characterMessageHeader.textColor = UIColor.black
             delegate.characterMessageBody.textColor = UIColor.black
+            delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
+            //delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "pure-black-wallpaper-159.jpg"))
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
@@ -254,15 +229,14 @@ final class BreakTimeViewModel {
             //delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.characterMessageHeader.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
-            delegate.characterMessageHeader.textColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
+            delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
+            //delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"))
         }
         
         //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
             //breakTimerCounter > 65 //&&
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        
         
         progressBarCounter += 1.0 / Double(dataStore.user.currentCoach.difficulty.baseBreakLength)
     }
