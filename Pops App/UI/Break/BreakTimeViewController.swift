@@ -246,7 +246,7 @@ extension BreakTimeViewController {
     }
 
     func setupTalkToCoachButton() {
-        talkToCoachButton.backgroundColor = Palette.lightBlue.color
+        talkToCoachButton.backgroundColor = UIColor.black //used to be Palette.lightBlue.color
         talkToCoachButton.layer.cornerRadius = 2.0
         talkToCoachButton.layer.masksToBounds = true
         talkToCoachButton.setTitle(viewModel.dataStore.user.currentCoach.breakButtonText, for: .normal)
