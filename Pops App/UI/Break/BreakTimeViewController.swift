@@ -3,6 +3,11 @@ import UIKit
 import UserNotifications
 
 class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, BreakTimeViewModelProgressBarDelegate, BreakButtonDelegate {
+    
+    var characterMessageHeader = UILabel()
+    
+    var progressBar = UILabel()
+    
 
     var viewModel: BreakTimeViewModel!
     let center = UNUserNotificationCenter.current()
@@ -13,7 +18,6 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     lazy var itemHeight: CGFloat = self.view.frame.height * (45/self.view.frame.height)
     
     let talkToCoachButton = UIButton()
-    let characterMessageHeader = UILabel()
     let characterMessageBody = UILabel()
     let circleBackgroundForCharacterImageView = UIImageView()
     let settingsButton = UIButton()
@@ -21,8 +25,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     
     let contentView = UIView()
     let settingsVC = SettingsViewController()
-    
-    let progressBar = UIView()
+
     var progressBarWidthAnchor: NSLayoutConstraint! {
         didSet {
             self.view.layoutIfNeeded()
@@ -339,3 +342,4 @@ extension BreakTimeViewController {
     }
 
 }
+
