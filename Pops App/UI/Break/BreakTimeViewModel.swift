@@ -1,10 +1,15 @@
 
 import Foundation
 import UIKit
+import CoreMotion
+import AudioToolbox
+import AVFoundation
 
 protocol BreakTimeViewModelDelegate: class {
     func moveToProductivity()
     func moveToSessionEnded()
+    var characterMessageHeader: UILabel {get set}
+    var progressBar: UILabel {get set}
 }
 
 protocol BreakTimeViewModelProgressBarDelegate: class {
@@ -19,6 +24,7 @@ protocol DisplayBreakTimerDelegate: class {
 final class BreakTimeViewModel {
     
     let dataStore = DataStore.singleton
+    let motionManager = CMMotionManager()
     weak var delegate: BreakTimeViewModelDelegate!
     weak var progressBarDelegate: BreakTimeViewModelProgressBarDelegate!
     weak var breakTimerDelegate: DisplayBreakTimerDelegate!
@@ -40,7 +46,44 @@ final class BreakTimeViewModel {
         self.breakTimer = dataStore.user.currentSession?.productivityTimer ?? Timer()
     }
     
+    //init(vc: ProductiveTimeViewController){
+        //motionManager.accelerometerUpdateInterval = 0.5
+        //motionManager.startAccelerometerUpdates()
+    //}
+
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func startTimer() {
+        motionManager.startAccelerometerUpdates()
         self.breakTimerCounter = dataStore.user.currentCoach.difficulty.baseBreakLength
         dataStore.defaults.set(Date(), forKey: "breakTimerStartedAt")
     
@@ -56,6 +99,41 @@ final class BreakTimeViewModel {
         dataStore.user.currentSession?.startSessionTimer()
         }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /////////////////////////////////////
+    
+    /////////////////////////////////////
+    
+    /////////////////////////////////////
+    /////////////////////////////////////
+    
+    /////////////////////////////////////
+    
+    /////////////////////////////////////
+    /////////////////////////////////////
+    
+    /////////////////////////////////////
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func breakTimerAction() {
         
         if dataStore.user.currentSession!.sessionTimerCounter <= 1 {
@@ -66,18 +144,130 @@ final class BreakTimeViewModel {
         
         breakTimerCounter -= 1
         print("break timer: \(breakTimerCounter)")
+       
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (1...5).contains(breakTimerCounter) {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+        }
+
+        //if productivityTimerCounter <= 0 {
+            //productivityTimer.invalidate()
+            //motionManager.stopAccelerometerUpdates()
+        
+        if motionManager.accelerometerData!.acceleration.z > 0.25 {
+            //userWasPenalized = false
+            UIScreen.main.brightness = 0.0 // used to be 0.01
+            //delegate.productiveTimeLabel.textColor = UIColor.black
+        }
+        
+        if motionManager.accelerometerData!.acceleration.z < 0.25 {
+            UIScreen.main.brightness = 0.3 // used to be 0.75
+            //delegate.productiveTimeLabel.textColor = UIColor.white
+        }
+        
+        //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
+            //breakTimerCounter > 65 //&&
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
+        
+        
+        
+        
         
         if breakTimerCounter <= 0 && dataStore.user.currentSession!.sessionTimerCounter > 1 {
             breakIsOn = false
             breakTimer.invalidate()
             dataStore.user.currentSession!.cyclesRemaining -= 1
+            
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            if (1...5).contains(breakTimerCounter) {
+                AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+                toggleTorch(on: true)
+                toggleTorch(on: false)
+                toggleTorch(on: true)
+                toggleTorch(on: false)
+                toggleTorch(on: true)
+                toggleTorch(on: false)
+                toggleTorch(on: true)
+                toggleTorch(on: false)
+            }
+
+            //if productivityTimerCounter <= 0 {
+                //productivityTimer.invalidate()
+                //motionManager.stopAccelerometerUpdates()
+            
+            if motionManager.accelerometerData!.acceleration.z > 0.25 {
+                //userWasPenalized = false
+                UIScreen.main.brightness = 0.0 // used to be 0.01
+                //delegate.productiveTimeLabel.textColor = UIColor.black
+            }
+            
+            if motionManager.accelerometerData!.acceleration.z < 0.25 {
+                UIScreen.main.brightness = 0.3 // used to be 0.75
+                //delegate.productiveTimeLabel.textColor = UIColor.white
+            }
+            
+            //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
+                //breakTimerCounter > 65 //&&
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             delegate.moveToProductivity()
         }
+        
+        
+        
+        
         
         if breakTimerDelegate != nil {
             breakTimerDelegate.breakTimerLabel.text = "\(formatTime(time: breakTimerCounter)) left"
             breakTimerDelegate.settingsTimerCounter -= 1
         }
+        
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        if (1...5).contains(breakTimerCounter) {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+            toggleTorch(on: true)
+            toggleTorch(on: false)
+        }
+
+        //if productivityTimerCounter <= 0 {
+            //productivityTimer.invalidate()
+            //motionManager.stopAccelerometerUpdates()
+        
+        if motionManager.accelerometerData!.acceleration.z > 0.25 {
+            //userWasPenalized = false
+            UIScreen.main.brightness = 0.0 // used to be 0.01
+            //delegate.productiveTimeLabel.textColor = UIColor.black
+            delegate.characterMessageHeader.textColor = UIColor.white
+            delegate.progressBar.backgroundColor = UIColor.white
+        }
+        
+        if motionManager.accelerometerData!.acceleration.z < 0.25 {
+            UIScreen.main.brightness = 0.3 // used to be 0.75
+            //delegate.productiveTimeLabel.textColor = UIColor.white
+            delegate.characterMessageHeader.textColor = UIColor.black
+            delegate.progressBar.backgroundColor = UIColor.black
+        }
+        
+        //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
+            //breakTimerCounter > 65 //&&
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
         
         progressBarCounter += 1.0 / Double(dataStore.user.currentCoach.difficulty.baseBreakLength)
     }
@@ -102,6 +292,78 @@ final class BreakTimeViewModel {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+        //breakTimerCounter < (dataStore.user.currentCoach.difficulty.baseProductivityLength - 60) //&&
+        //userWasPenalized = true //used to be true
+    //}
+    
+    //if cancelCountdown > 0 {
+        //cancelCountdown -= 1
+    //}
+    
+    //if cancelCountdown <= 25 {
+        //delegate.animateCancelToWeak()
+    //}
+    
+    //progressBarCounter += 1.0 / Double(dataStore.user.currentCoach.difficulty.baseProductivityLength)
+    
+    //if breakTimerCounter <= 65 {
+        //delegate.characterMessageHeader.text = "It's almost break time!"
+        //delegate.characterMessageBody.text = "Wrap up your final thoughts, your break will start in less than 1 minute."
+    //}
+        //delegate.moveToBreak()
+    //}
+//}
+
+
+func toggleTorch(on: Bool) {
+
+    guard let device = AVCaptureDevice.default(for: .video) else { return }
+
+    if device.hasTorch {
+        do {
+            try device.lockForConfiguration()
+            
+            if on == true {
+                device.torchMode = .on
+            } else {
+                device.torchMode = .off
+            }
+            
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch could not be used")
+        }
+    } else {
+        print("Torch is not available")
+    }
+
+}
+
+/////////////////////////////////////
+/////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 extension BreakTimeViewModel {
     
     //helper method
@@ -124,3 +386,11 @@ extension BreakTimeViewModel {
         }
     }
 }
+
+
+
+
+
+
+
+
