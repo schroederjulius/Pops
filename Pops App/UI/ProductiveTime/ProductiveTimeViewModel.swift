@@ -10,6 +10,8 @@ protocol ProductiveTimeViewModelDelegate: class {
     var progressBarWidthAnchor: NSLayoutConstraint! {get set}
     var characterMessageHeader: UILabel {get set}
     var characterMessageBody: UILabel {get set}
+    var progressBar:UIView {get set}
+    var cancelSessionButton:UIButton {get set}
     
     func animateCancelToWeak()
     func moveToBreak()
@@ -70,18 +72,6 @@ final class ProductiveTimeViewModel {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     func productivityTimerAction() {
 
         productivityTimerCounter -= 1
@@ -93,11 +83,15 @@ final class ProductiveTimeViewModel {
             userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
             delegate.productiveTimeLabel.textColor = UIColor.black
+            delegate.progressBar.backgroundColor = UIColor.black
+            delegate.self.cancelSessionButton.titleLabel?.textColor = UIColor.black
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
             UIScreen.main.brightness = 0.3 // used to be 0.75
             delegate.productiveTimeLabel.textColor = UIColor.white
+            delegate.progressBar.backgroundColor = UIColor.white
+            delegate.self.cancelSessionButton.titleLabel?.textColor = UIColor.white
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 &&
@@ -140,14 +134,6 @@ final class ProductiveTimeViewModel {
             delegate.moveToBreak()
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
     
     func toggleTorch(on: Bool) {
 

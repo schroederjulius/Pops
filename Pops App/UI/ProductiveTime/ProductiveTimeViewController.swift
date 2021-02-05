@@ -16,7 +16,7 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
     
     let coachWindowView = UIView()
     let coachIcon = UIImageView()
-    let cancelSessionButton = UIButton()
+    var cancelSessionButton = UIButton()
     var coachBottomAnchorConstraint: NSLayoutConstraint!
 
     var vibrateTimer = Timer()
@@ -24,7 +24,7 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
     
     var userMightCancel = false
     
-    let progressBar = UIView()
+    var progressBar = UIView()
     var progressBarWidthAnchor: NSLayoutConstraint! {
         didSet {
             self.view.layoutIfNeeded()
@@ -300,9 +300,10 @@ extension ProductiveTimeViewController {
     }
     
     func animateCancelToWeak() {
+        view.addSubview(cancelSessionButton)
         self.cancelSessionButton.setTitle("ANIMATED", for: .normal)
         self.cancelSessionButton.titleLabel?.text = "im weak"
-        self.cancelSessionButton.titleLabel?.textColor = Palette.lightGrey.color
+        self.cancelSessionButton.titleLabel?.textColor = UIColor.white // Palette.lightGrey.color
         
         self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)
         //TODO: Uncomment for production
