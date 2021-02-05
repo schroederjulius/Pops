@@ -77,10 +77,10 @@ final class BreakTimeViewModel {
     
     
     
-    
-    
-    
-    
+    //temp
+   // func animateCancelToWeak() {
+   //     self.TalktoButton.setTitle(" ", for: .normal)
+   // }
     
     
     func startTimer() {
@@ -99,16 +99,6 @@ final class BreakTimeViewModel {
         })
         dataStore.user.currentSession?.startSessionTimer()
         }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     /////////////////////////////////////
     
