@@ -300,9 +300,7 @@ extension ProductiveTimeViewController {
     
     func animateCancelToWeak() {
         self.cancelSessionButton.setTitle(" ", for: .normal)
-        self.cancelSessionButton.titleLabel?.text = "im strong"
 
-        
         self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)
         //TODO: Uncomment for production
         self.cancelSessionButton.addTarget(self, action: #selector(self.cancelSessionWithPenalty), for: .touchUpInside)
