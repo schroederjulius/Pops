@@ -12,6 +12,7 @@ protocol BreakTimeViewModelDelegate: class {
     var characterMessageBody: UILabel {get set}
     var progressBar: UILabel {get set}
     var settingsButton: UIButton {get set}
+    var dismissIcon: UIButton {get set}
 }
 
 protocol BreakTimeViewModelProgressBarDelegate: class {
@@ -221,7 +222,7 @@ final class BreakTimeViewModel {
             delegate.progressBar.backgroundColor = UIColor.black
             delegate.characterMessageBody.textColor = UIColor.black
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
-            //delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "pure-black-wallpaper-159.jpg"))
+            delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
@@ -231,7 +232,7 @@ final class BreakTimeViewModel {
             delegate.progressBar.backgroundColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
-            //delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"))
+            delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"),  for: .normal)
         }
         
         //if motionManager.accelerometerData!.acceleration.z < 0.25 &&

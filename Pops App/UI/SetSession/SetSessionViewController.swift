@@ -187,7 +187,7 @@ extension SetSessionViewController {
     }
 
     func setupSettingsButton() {
-        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
+        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
         view.addSubview(settingsButton)
 
         settingsButton.translatesAutoresizingMaskIntoConstraints = false

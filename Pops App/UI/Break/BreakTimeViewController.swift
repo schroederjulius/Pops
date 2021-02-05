@@ -19,7 +19,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     let talkToCoachButton = UIButton()
     let circleBackgroundForCharacterImageView = UIImageView()
     var settingsButton = UIButton()
-    let dismissIcon = UIButton()
+    var dismissIcon = UIButton()
     
     let contentView = UIView()
     let settingsVC = SettingsViewController()
@@ -166,10 +166,10 @@ extension BreakTimeViewController {
     }
 
     func setupSettingsButton() {
-        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
+        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
 
         view.addSubview(settingsButton)
-        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
+        settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16.0).isActive = true
         settingsButton.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 16.0).isActive = true
