@@ -80,9 +80,9 @@ final class BreakTimeViewModel {
     
     
     //temp
-   // func animateCancelToWeak() {
-   //     self.TalktoButton.setTitle(" ", for: .normal)
-   // }
+    // func animateCancelToWeak() {
+    //     self.TalktoButton.setTitle(" ", for: .normal)
+    // }
     
     
     func startTimer() {

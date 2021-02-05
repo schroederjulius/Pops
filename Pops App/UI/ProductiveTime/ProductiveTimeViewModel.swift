@@ -70,6 +70,18 @@ final class ProductiveTimeViewModel {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func productivityTimerAction() {
 
         productivityTimerCounter -= 1
@@ -128,6 +140,14 @@ final class ProductiveTimeViewModel {
             delegate.moveToBreak()
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func toggleTorch(on: Bool) {
 
