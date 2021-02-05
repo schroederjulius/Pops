@@ -124,7 +124,7 @@ final class ProductiveTimeViewModel {
         
         if productivityTimerCounter <= 0 {
             productivityTimer.invalidate()
-            motionManager.stopAccelerometerUpdates()
+            //motionManager.stopAccelerometerUpdates()
             delegate.moveToBreak()
         }
     }
