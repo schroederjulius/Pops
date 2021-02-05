@@ -9,6 +9,7 @@ protocol BreakTimeViewModelDelegate: class {
     func moveToProductivity()
     func moveToSessionEnded()
     var characterMessageHeader: UILabel {get set}
+    var characterMessageBody: UILabel {get set}
     var progressBar: UILabel {get set}
 }
 
@@ -252,15 +253,19 @@ final class BreakTimeViewModel {
             //userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
             //delegate.productiveTimeLabel.textColor = UIColor.black
-            delegate.characterMessageHeader.textColor = UIColor.white
-            delegate.progressBar.backgroundColor = UIColor.white
+            delegate.characterMessageHeader.textColor = UIColor.black
+            delegate.progressBar.backgroundColor = UIColor.black
+            delegate.characterMessageHeader.textColor = UIColor.black
+            delegate.characterMessageBody.textColor = UIColor.black
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
             UIScreen.main.brightness = 0.3 // used to be 0.75
             //delegate.productiveTimeLabel.textColor = UIColor.white
-            delegate.characterMessageHeader.textColor = UIColor.black
-            delegate.progressBar.backgroundColor = UIColor.black
+            delegate.characterMessageHeader.textColor = UIColor.white
+            delegate.progressBar.backgroundColor = UIColor.white
+            delegate.characterMessageHeader.textColor = UIColor.white
+            delegate.characterMessageBody.textColor = UIColor.white
         }
         
         //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
