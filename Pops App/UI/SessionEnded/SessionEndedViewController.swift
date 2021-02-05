@@ -20,6 +20,14 @@ class SessionEndedViewController: UIViewController {
     
     var coachBottomAnchorConstraint: NSLayoutConstraint!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black // used to be .white

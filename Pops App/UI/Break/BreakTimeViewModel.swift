@@ -231,7 +231,7 @@ final class BreakTimeViewModel {
             delegate.characterMessageHeader.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
-            delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-Black"), for: .normal)
+            delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
             delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"),  for: .normal)
         }
         

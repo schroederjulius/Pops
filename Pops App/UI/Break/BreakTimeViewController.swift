@@ -68,6 +68,15 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
         }
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         if viewModel.breakIsOn == false {
             breakTimeEndedUserNotificationRequest()

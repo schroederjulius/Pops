@@ -21,6 +21,14 @@ class HomeSettingsViewController: UIViewController {
         return DataStore.singleton.user.currentCoach.name
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black // used to be UIColor.white

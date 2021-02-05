@@ -45,6 +45,14 @@ class SetSessionViewController: UIViewController {
     var allowNotificationButtonsStackViewXAnchor: NSLayoutConstraint!
     var readyButtonsStackViewBottomAnchor: NSLayoutConstraint!
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black //used to be UIColor.white
