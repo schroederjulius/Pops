@@ -265,8 +265,7 @@ extension ProductiveTimeViewController {
             cancelSessionButton.setTitle("PENALTY", for: .normal)
             cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
         }
-    
-        cancelSessionButton.titleLabel?.textColor = UIColor.white //used to be Palette.black.color
+
         cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
       
         cancelSessionButton.translatesAutoresizingMaskIntoConstraints = false
@@ -300,10 +299,9 @@ extension ProductiveTimeViewController {
     }
     
     func animateCancelToWeak() {
-        view.addSubview(cancelSessionButton)
-        self.cancelSessionButton.setTitle("ANIMATED", for: .normal)
-        self.cancelSessionButton.titleLabel?.text = "im weak"
-        self.cancelSessionButton.titleLabel?.textColor = UIColor.white // Palette.lightGrey.color
+        self.cancelSessionButton.setTitle(" ", for: .normal)
+        self.cancelSessionButton.titleLabel?.text = "im strong"
+
         
         self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)
         //TODO: Uncomment for production
