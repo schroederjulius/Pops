@@ -120,18 +120,16 @@ final class ProductiveTimeViewModel {
             UIScreen.main.brightness = 0.0 // used to be 0.01
             delegate.productiveTimeLabel.textColor = UIColor.black
             delegate.progressBar.backgroundColor = UIColor.black
-            delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
-            
-            //delegate.self.cancelSessionButton.setTitle("im 1", for: .normal)
+            //delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
+            //delegate.cancelSessionButton.setTitle("im weak", for: .normal)
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
             UIScreen.main.brightness = 0.3 // used to be 0.75
             delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
-            delegate.self.cancelSessionButton.setTitle("im weak", for: .normal)
-            
-            //delegate.self.cancelSessionButton.setTitle("im 3", for: .normal)
+            //delegate.self.cancelSessionButton.setTitle("im weak", for: .normal)
+            //delegate.cancelSessionButton.setTitle("im weak", for: .normal)
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 &&
