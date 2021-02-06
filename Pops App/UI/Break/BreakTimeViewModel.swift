@@ -13,6 +13,7 @@ protocol BreakTimeViewModelDelegate: class {
     var progressBar: UILabel {get set}
     var settingsButton: UIButton {get set}
     var dismissIcon: UIButton {get set}
+    var talkToCoachButton: UIButton {get set}
 }
 
 protocol BreakTimeViewModelProgressBarDelegate: class {
@@ -216,6 +217,7 @@ final class BreakTimeViewModel {
             delegate.characterMessageHeader.textColor = UIColor.black
             delegate.characterMessageBody.textColor = UIColor.black
             delegate.progressBar.backgroundColor = UIColor.black
+            delegate.talkToCoachButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 0.0)
             
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
             delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
@@ -227,6 +229,7 @@ final class BreakTimeViewModel {
             delegate.characterMessageHeader.textColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
+            delegate.talkToCoachButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 14.0)
             
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
             delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"),  for: .normal)

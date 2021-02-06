@@ -16,7 +16,7 @@ class BreakTimeViewController: UIViewController, BreakTimeViewModelDelegate, Bre
     lazy var itemWidth: CGFloat = self.view.frame.width * (269/self.view.frame.width)
     lazy var itemHeight: CGFloat = self.view.frame.height * (45/self.view.frame.height)
     
-    let talkToCoachButton = UIButton()
+    var talkToCoachButton = UIButton()
     let circleBackgroundForCharacterImageView = UIImageView()
     var settingsButton = UIButton()
     var dismissIcon = UIButton()
@@ -260,8 +260,8 @@ extension BreakTimeViewController {
         talkToCoachButton.backgroundColor = UIColor.black //used to be Palette.lightBlue.color
         talkToCoachButton.layer.cornerRadius = 2.0
         talkToCoachButton.layer.masksToBounds = true
-        //talkToCoachButton.setTitle(viewModel.dataStore.user.currentCoach.breakButtonText, for: .normal)
-        talkToCoachButton.setTitle(" ", for: .normal)
+        talkToCoachButton.setTitle(viewModel.dataStore.user.currentCoach.breakButtonText, for: .normal)
+        //talkToCoachButton.setTitle(" ", for: .normal)
         talkToCoachButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 14.0)
         //talkToCoachButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 99.0)
         talkToCoachButton.addTarget(self, action: #selector(talkToCoach), for: .touchUpInside)
