@@ -69,7 +69,7 @@ extension SettingsViewController {
 
     func setupEndSessionView() {
         view.addSubview(endSessionView)
-        endSessionView.backgroundColor = Palette.lightGrey.color
+        endSessionView.backgroundColor = Palette.lightGrey.color //seen in settings during break
         endSessionView.translatesAutoresizingMaskIntoConstraints = false
         endSessionView.widthAnchor.constraint(equalToConstant: viewWidth * (300 / 375)).isActive = true
         endSessionView.heightAnchor.constraint(equalToConstant: viewHeight * (50/667)).isActive = true
@@ -101,7 +101,7 @@ extension SettingsViewController {
     
     func setupEndBreakView() {
         view.addSubview(endBreakView)
-        endBreakView.backgroundColor = Palette.purple.color
+        endBreakView.backgroundColor = Palette.purple.color //seen in settings during break
         endBreakView.translatesAutoresizingMaskIntoConstraints = false
         endBreakView.widthAnchor.constraint(equalToConstant: viewWidth * (300 / 375)).isActive = true
         endBreakView.heightAnchor.constraint(equalToConstant: viewHeight * (50 / 667)).isActive = true
