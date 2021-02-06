@@ -10,7 +10,7 @@ protocol ProductiveTimeViewModelDelegate: class {
     var progressBarWidthAnchor: NSLayoutConstraint! {get set}
     var characterMessageHeader: UILabel {get set}
     var characterMessageBody: UILabel {get set}
-    var progressBar:UIView {get set}
+    var progressBar:UIView {get set} //UIView oder
     var cancelSessionButton:UIButton {get set}
     
     func animateCancelToWeak()
@@ -121,6 +121,8 @@ final class ProductiveTimeViewModel {
             UIScreen.main.brightness = 0.0 // used to be 0.01
             delegate.productiveTimeLabel.textColor = UIColor.black
             delegate.progressBar.backgroundColor = UIColor.black
+            delegate.characterMessageHeader.textColor = UIColor.black
+            delegate.characterMessageBody.textColor = UIColor.black
             
             if cancelCountdown > 0 {
                 cancelCountdown -= 1
@@ -137,6 +139,8 @@ final class ProductiveTimeViewModel {
             UIScreen.main.brightness = 0.3 // used to be 0.75
             delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
+            delegate.characterMessageHeader.textColor = UIColor.white
+            delegate.characterMessageBody.textColor = UIColor.white
             
             if cancelCountdown > 0 {
                 cancelCountdown -= 1

@@ -149,8 +149,7 @@ final class BreakTimeViewModel {
             breakIsOn = false
             breakTimer.invalidate()
             dataStore.user.currentSession!.cyclesRemaining -= 1
-            
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
             if (1...5).contains(breakTimerCounter) {
                 AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
                 toggleTorch(on: true)
@@ -180,7 +179,7 @@ final class BreakTimeViewModel {
             
             //if motionManager.accelerometerData!.acceleration.z < 0.25 &&
                 //breakTimerCounter > 65 //&&
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             delegate.moveToProductivity()
         }
         
@@ -215,8 +214,9 @@ final class BreakTimeViewModel {
             UIScreen.main.brightness = 0.0 // used to be 0.01
             //delegate.productiveTimeLabel.textColor = UIColor.black
             delegate.characterMessageHeader.textColor = UIColor.black
-            delegate.progressBar.backgroundColor = UIColor.black
             delegate.characterMessageBody.textColor = UIColor.black
+            delegate.progressBar.backgroundColor = UIColor.black
+            
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
             delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_black"), for: .normal)
         }
@@ -225,8 +225,9 @@ final class BreakTimeViewModel {
             UIScreen.main.brightness = 0.3 // used to be 0.75
             //delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.characterMessageHeader.textColor = UIColor.white
-            delegate.progressBar.backgroundColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
+            delegate.progressBar.backgroundColor = UIColor.white
+            
             delegate.settingsButton.setBackgroundImage(#imageLiteral(resourceName: "IC_Settings-White"), for: .normal)
             delegate.self.dismissIcon.setBackgroundImage(#imageLiteral(resourceName: "IC_Quit-Black"),  for: .normal)
         }
