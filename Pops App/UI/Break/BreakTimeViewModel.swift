@@ -79,10 +79,6 @@ final class BreakTimeViewModel {
     
     
     
-    //temp
-    // func animateCancelToWeak() {
-    //     self.TalktoButton.setTitle(" ", for: .normal)
-    // }
     
     
     func startTimer() {
@@ -262,39 +258,6 @@ final class BreakTimeViewModel {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-        //breakTimerCounter < (dataStore.user.currentCoach.difficulty.baseProductivityLength - 60) //&&
-        //userWasPenalized = true //used to be true
-    //}
-    
-    //if cancelCountdown > 0 {
-        //cancelCountdown -= 1
-    //}
-    
-    //if cancelCountdown <= 25 {
-        //delegate.animateCancelToWeak()
-    //}
-    
-    //progressBarCounter += 1.0 / Double(dataStore.user.currentCoach.difficulty.baseProductivityLength)
-    
-    //if breakTimerCounter <= 65 {
-        //delegate.characterMessageHeader.text = "It's almost break time!"
-        //delegate.characterMessageBody.text = "Wrap up your final thoughts, your break will start in less than 1 minute."
-    //}
-        //delegate.moveToBreak()
-    //}
-//}
-
-
 func toggleTorch(on: Bool) {
 
     guard let device = AVCaptureDevice.default(for: .video) else { return }
@@ -318,17 +281,6 @@ func toggleTorch(on: Bool) {
     }
 
 }
-
-/////////////////////////////////////
-/////////////////////////////////////
-
-
-
-
-
-
-
-
 
 
 
