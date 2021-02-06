@@ -119,18 +119,34 @@ final class ProductiveTimeViewModel {
             //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
             userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
-            //delegate.productiveTimeLabel.textColor = UIColor.black
-            //delegate.progressBar.backgroundColor = UIColor.black
-            //delegate.self.cancelSessionButton.setTitle("1", for: .normal) //not seen
-            //delegate.cancelSessionButton.setTitle("2", for: .normal) //seen in the first 5 seconds face down
+            delegate.productiveTimeLabel.textColor = UIColor.black
+            delegate.progressBar.backgroundColor = UIColor.black
+            
+            if cancelCountdown > 0 {
+                cancelCountdown -= 1
+            }
+            if cancelCountdown <= 25 {
+                delegate.cancelSessionButton.setTitle(" ", for: .normal)
+            }
+            if cancelCountdown > 25 {
+                delegate.cancelSessionButton.setTitle(" ", for: .normal)
+            }
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
             UIScreen.main.brightness = 0.3 // used to be 0.75
-            //delegate.productiveTimeLabel.textColor = UIColor.white
-            //delegate.progressBar.backgroundColor = UIColor.white
-            //delegate.self.cancelSessionButton.setTitle("3", for: .normal) //not seen
-            //delegate.cancelSessionButton.setTitle("4", for: .normal) //only seen in the first 5 sedonds face up when device motion state changed
+            delegate.productiveTimeLabel.textColor = UIColor.white
+            delegate.progressBar.backgroundColor = UIColor.white
+            
+            if cancelCountdown > 0 {
+                cancelCountdown -= 1
+            }
+            if cancelCountdown <= 25 {
+                delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+            }
+            if cancelCountdown > 25 {
+                delegate.cancelSessionButton.setTitle("cancel Session", for: .normal)
+            }
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 &&
@@ -144,13 +160,13 @@ final class ProductiveTimeViewModel {
             userWasPenalized = true //used to be true
         }
         
-        if cancelCountdown > 0 {
-            cancelCountdown -= 1
-        }
+        //if cancelCountdown > 0 {
+        //    cancelCountdown -= 1
+        //}
         
-        if cancelCountdown <= 25 {
-            delegate.animateCancelToWeak()
-        }
+        //if cancelCountdown <= 25 {
+        //    delegate.animateCancelToWeak()
+        //}
         
         progressBarCounter += 1.0 / Double(dataStore.user.currentCoach.difficulty.baseProductivityLength)
         

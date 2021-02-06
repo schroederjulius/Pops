@@ -210,7 +210,7 @@ extension ProductiveTimeViewController {
         coachBottomAnchorConstraint.isActive = true
         coachIcon.centerXAnchor.constraint(equalTo: coachWindowView.centerXAnchor, constant: 0).isActive = true
         coachIcon.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        coachIcon.widthAnchor.constraint(equalToConstant: -9999).isActive = true
+        coachIcon.widthAnchor.constraint(equalToConstant: -9999).isActive = true //52
     }
 
     func setupCharacterMessageHeader() {
@@ -259,12 +259,12 @@ extension ProductiveTimeViewController {
         view.addSubview(cancelSessionButton)
         
         if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == false {
-            cancelSessionButton.setTitle("NO PENALTY", for: .normal)
+            cancelSessionButton.setTitle("cancel Session", for: .normal) //only shows for the first second after starting a session when face up
             cancelSessionButton.addTarget(self, action: #selector(cancelSession), for: .touchUpInside)
-        } else {
-            cancelSessionButton.setTitle("PENALTY", for: .normal)
-            cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
-        }
+        } //else {
+           // cancelSessionButton.setTitle("PENALTY", for: .normal)
+           // cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
+        //}
 
         cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
       
@@ -299,10 +299,22 @@ extension ProductiveTimeViewController {
     }
     
     func animateCancelToWeak() {
-        self.cancelSessionButton.setTitle("im weak", for: .normal)
-        self.cancelSessionButton.titleLabel?.text = "im strong"
-        self.cancelSessionButton.titleLabel?.textColor = UIColor.white //Palette.lightGrey.color
+
+        if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == false {
+            cancelSessionButton.setTitle("im weak", for: .normal) //ONLY SEEN WHEN CANCEL SESSION BUTTON IS PRESSED
+            cancelSessionButton.addTarget(self, action: #selector(cancelSession), for: .touchUpInside)
+        }
         
+        if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == true {
+            cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
+        }
+        
+        
+        
+        
+        //self.cancelSessionButton.setTitle("im weak", for: .normal)
+        self.cancelSessionButton.titleLabel?.text = "im strong"
+        self.cancelSessionButton.titleLabel?.textColor = UIColor.green //Palette.lightGrey.color
         
         self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)
         //TODO: Uncomment for production
