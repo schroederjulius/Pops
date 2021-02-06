@@ -222,9 +222,9 @@ extension ProductiveTimeViewController {
         if viewModel.dataStore.defaults.value(forKey: "returningUser") == nil {
             characterMessageHeader.text = "Flip your phone face down and get to work!"
         } else {
-            //let introStatments = viewModel.dataStore.user.currentCoach.introStatements
-            //let randomIndex = Int(arc4random_uniform(UInt32(introStatments.count)))
-            //characterMessageHeader.text = viewModel.dataStore.user.currentCoach.productivityStatements[randomIndex].header
+            let introStatments = viewModel.dataStore.user.currentCoach.introStatements
+            let randomIndex = Int(arc4random_uniform(UInt32(introStatments.count)))
+            characterMessageHeader.text = viewModel.dataStore.user.currentCoach.productivityStatements[randomIndex].header
         }
 
         view.addSubview(characterMessageHeader)
@@ -243,9 +243,9 @@ extension ProductiveTimeViewController {
         if viewModel.dataStore.defaults.value(forKey: "returningUser") == nil {
             characterMessageBody.text = "Keep your phone face down. When the timer hits 0, your camera will flash signaling that it’s time for a break."
         } else {
-            //let introStatments = viewModel.dataStore.user.currentCoach.introStatements
-            //let randomIndex = Int(arc4random_uniform(UInt32(introStatments.count)))
-            //characterMessageBody.text = viewModel.dataStore.user.currentCoach.productivityStatements[randomIndex].body
+            let introStatments = viewModel.dataStore.user.currentCoach.introStatements
+            let randomIndex = Int(arc4random_uniform(UInt32(introStatments.count)))
+            characterMessageBody.text = viewModel.dataStore.user.currentCoach.productivityStatements[randomIndex].body
         }
 
         view.addSubview(characterMessageBody)
