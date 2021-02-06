@@ -118,18 +118,18 @@ final class ProductiveTimeViewModel {
             //delegate.characterMessageBody.text = dataStore.user.currentCoach.productivityStatements[0].body
             userWasPenalized = false
             UIScreen.main.brightness = 0.0 // used to be 0.01
-            delegate.productiveTimeLabel.textColor = UIColor.black
+            //delegate.productiveTimeLabel.textColor = UIColor.black
             delegate.progressBar.backgroundColor = UIColor.black
-            //delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
-            //delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+            delegate.self.cancelSessionButton.setTitle("1", for: .normal) //not seen
+            delegate.cancelSessionButton.setTitle("2", for: .normal) //seen in the first 5 seconds face down
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
             UIScreen.main.brightness = 0.3 // used to be 0.75
-            delegate.productiveTimeLabel.textColor = UIColor.white
+            //delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
-            //delegate.self.cancelSessionButton.setTitle("im weak", for: .normal)
-            //delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+            delegate.self.cancelSessionButton.setTitle("3", for: .normal) //not seen
+            delegate.cancelSessionButton.setTitle("4", for: .normal) //only seen in the first 5 sedonds face up when device motion state changed
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 &&
