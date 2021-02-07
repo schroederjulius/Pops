@@ -301,7 +301,7 @@ extension ProductiveTimeViewController {
     func animateCancelToWeak() {
 
         if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == false {
-            cancelSessionButton.setTitle("im weak", for: .normal) //ONLY SEEN WHEN CANCEL SESSION BUTTON IS PRESSED
+            //cancelSessionButton.setTitle("im weak", for: .normal) //ONLY SEEN WHEN CANCEL SESSION BUTTON IS PRESSED
             cancelSessionButton.addTarget(self, action: #selector(cancelSession), for: .touchUpInside)
         }
         

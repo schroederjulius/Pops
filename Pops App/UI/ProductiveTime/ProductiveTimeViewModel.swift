@@ -147,6 +147,7 @@ final class ProductiveTimeViewModel {
             }
             if cancelCountdown <= 25 {
                 delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+                delegate.animateCancelToWeak()
             }
             if cancelCountdown > 25 {
                 delegate.cancelSessionButton.setTitle("cancel Session", for: .normal)
