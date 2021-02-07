@@ -310,9 +310,8 @@ extension ProductiveTimeViewController {
             cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
         }
         
-        
-        //self.cancelSessionButton.setTitle("im weak", for: .normal)
-        self.cancelSessionButton.titleLabel?.text = "im strong"
+        self.cancelSessionButton.setTitle("im weak", for: .normal)
+        self.cancelSessionButton.titleLabel?.text = "im weak"
         self.cancelSessionButton.titleLabel?.textColor = UIColor.green //Palette.lightGrey.color
         
         self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)

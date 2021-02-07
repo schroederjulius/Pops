@@ -128,10 +128,12 @@ final class ProductiveTimeViewModel {
                 cancelCountdown -= 1
             }
             if cancelCountdown <= 25 {
-                delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
+                //delegate.cancelSessionButton.setTitle(" ", for: .normal)
+                delegate.cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 0.0)
             }
             if cancelCountdown > 25 {
-                delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
+                //delegate.cancelSessionButton.setTitle(" ", for: .normal)
+                delegate.cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 0.0)
             }
         }
         
@@ -146,12 +148,13 @@ final class ProductiveTimeViewModel {
                 cancelCountdown -= 1
             }
             if cancelCountdown <= 25 {
-                delegate.self.cancelSessionButton.setTitle("im weak", for: .normal)
+                //delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+                delegate.cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
                 delegate.animateCancelToWeak()
             }
             if cancelCountdown > 25 {
-                delegate.self.cancelSessionButton.setTitle("cancel Session", for: .normal)
-                delegate.animateCancelToWeak()
+                //delegate.cancelSessionButton.setTitle("cancel Session", for: .normal)
+                delegate.cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
             }
         }
         
