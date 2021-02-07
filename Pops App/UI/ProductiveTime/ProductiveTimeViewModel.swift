@@ -128,10 +128,10 @@ final class ProductiveTimeViewModel {
                 cancelCountdown -= 1
             }
             if cancelCountdown <= 25 {
-                delegate.cancelSessionButton.setTitle(" ", for: .normal)
+                delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
             }
             if cancelCountdown > 25 {
-                delegate.cancelSessionButton.setTitle(" ", for: .normal)
+                delegate.self.cancelSessionButton.setTitle(" ", for: .normal)
             }
         }
         
@@ -146,11 +146,12 @@ final class ProductiveTimeViewModel {
                 cancelCountdown -= 1
             }
             if cancelCountdown <= 25 {
-                delegate.cancelSessionButton.setTitle("im weak", for: .normal)
+                delegate.self.cancelSessionButton.setTitle("im weak", for: .normal)
                 delegate.animateCancelToWeak()
             }
             if cancelCountdown > 25 {
-                delegate.cancelSessionButton.setTitle("cancel Session", for: .normal)
+                delegate.self.cancelSessionButton.setTitle("cancel Session", for: .normal)
+                delegate.animateCancelToWeak()
             }
         }
         

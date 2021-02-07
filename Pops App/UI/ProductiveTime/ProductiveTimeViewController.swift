@@ -155,6 +155,7 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
+    //@objc func skipToBreak() {
     func skipToBreak() {
        viewModel.skipToBreak()
         
@@ -261,10 +262,10 @@ extension ProductiveTimeViewController {
         if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == false {
             cancelSessionButton.setTitle("cancel Session", for: .normal) //only shows for the first second after starting a session when face up
             cancelSessionButton.addTarget(self, action: #selector(cancelSession), for: .touchUpInside)
-        } //else {
-           // cancelSessionButton.setTitle("PENALTY", for: .normal)
-           // cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
-        //}
+        } else {
+            cancelSessionButton.setTitle("im weak", for: .normal)
+            cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
+        }
 
         cancelSessionButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 13.0)
       
@@ -308,8 +309,6 @@ extension ProductiveTimeViewController {
         if viewModel.dataStore.defaults.value(forKey: "sessionActive") as? Bool == true {
             cancelSessionButton.addTarget(self, action: #selector(cancelSessionWithPenalty), for: .touchUpInside)
         }
-        
-        
         
         
         //self.cancelSessionButton.setTitle("im weak", for: .normal)
