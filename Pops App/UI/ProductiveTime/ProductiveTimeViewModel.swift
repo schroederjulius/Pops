@@ -138,7 +138,7 @@ final class ProductiveTimeViewModel {
         }
         
         if motionManager.accelerometerData!.acceleration.z < 0.25 {
-            UIScreen.main.brightness = 0.3 // used to be 0.75
+            UIScreen.main.brightness = 0.0 // used to be 0.75
             delegate.productiveTimeLabel.textColor = UIColor.white
             delegate.progressBar.backgroundColor = UIColor.white
             delegate.characterMessageHeader.textColor = UIColor.white
