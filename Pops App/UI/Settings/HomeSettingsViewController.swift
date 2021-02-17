@@ -54,21 +54,21 @@ class HomeSettingsViewController: UIViewController {
     func checkForSelectedCharacter() {
         switch usersCurrentCoach {
         case "Pops":
-            baba.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            pops.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
-            chad.circleBackgroundView.backgroundColor = Palette.lightGrey.color
+            baba.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            pops.circleBackgroundView.backgroundColor = UIColor.white //used to be Palette.salmon.color
+            chad.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
         case "Chad":
-            baba.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            pops.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            chad.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
+            baba.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            pops.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            chad.circleBackgroundView.backgroundColor = UIColor.white //used to be Palette.salmon.color
         case "Baba":
-            baba.circleBackgroundView.backgroundColor = UIColor.black //used to be Palette.salmon.color
-            pops.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            chad.circleBackgroundView.backgroundColor = Palette.lightGrey.color
+            baba.circleBackgroundView.backgroundColor = UIColor.white //used to be Palette.salmon.color
+            pops.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            chad.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
         default:
-            baba.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            pops.circleBackgroundView.backgroundColor = Palette.lightGrey.color
-            chad.circleBackgroundView.backgroundColor = Palette.lightGrey.color
+            baba.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            pops.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
+            chad.circleBackgroundView.backgroundColor = UIColor.black //Palette.lightGrey.color
         }
 
         coachNameLabel.text = DataStore.singleton.getCurrentCoach().name
