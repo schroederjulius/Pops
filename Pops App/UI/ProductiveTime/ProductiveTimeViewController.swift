@@ -155,8 +155,8 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
-    //@objc func skipToBreak() {
-    func skipToBreak() {
+    //@objc func skipToBreak() { //use when production
+    func skipToBreak() { //use for finished product
        viewModel.skipToBreak()
         
         self.view.layoutIfNeeded()
@@ -314,9 +314,9 @@ extension ProductiveTimeViewController {
         self.cancelSessionButton.titleLabel?.text = "im weak"
         self.cancelSessionButton.titleLabel?.textColor = UIColor.white //Palette.lightGrey.color
         
-        self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside)
+        self.cancelSessionButton.removeTarget(self, action: #selector(self.cancelSession), for: .touchUpInside) //use for finished product
         //TODO: Uncomment for production
         self.cancelSessionButton.addTarget(self, action: #selector(self.cancelSessionWithPenalty), for: .touchUpInside)
-        //self.cancelSessionButton.addTarget(self, action: #selector(self.skipToBreak), for: .touchUpInside)
+        //self.cancelSessionButton.addTarget(self, action: #selector(self.skipToBreak), for: .touchUpInside) //comment out for production
     }
 }
