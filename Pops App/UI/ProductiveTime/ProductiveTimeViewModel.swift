@@ -10,8 +10,8 @@ protocol ProductiveTimeViewModelDelegate: class {
     var progressBarWidthAnchor: NSLayoutConstraint! {get set}
     var characterMessageHeader: UILabel {get set}
     var characterMessageBody: UILabel {get set}
-    var progressBar:UIView {get set} //UIView oder
-    var cancelSessionButton:UIButton {get set}
+    var progressBar: UIView {get set} //UIView oder
+    var cancelSessionButton: UIButton {get set}
     
     func animateCancelToWeak()
     func moveToBreak()
