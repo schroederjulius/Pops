@@ -51,13 +51,13 @@ class SettingsViewController: UIViewController, DisplayBreakTimerDelegate {
     }
 
     @objc func endSessionBttnPressed() {
-        endSessionView.backgroundColor = Palette.grey.color
+        endSessionView.backgroundColor = UIColor.black //Palette.grey.color //seen when end session button is pressed
         DataStore.singleton.user.currentSession?.sessionTimer.invalidate()
         delegate.moveToSessionEnded()
     }
     
     @objc func endBreakBttnPressed() {
-        endBreakView.backgroundColor = Palette.darkPurple.color
+        endBreakView.backgroundColor = UIColor.black //Palette.darkPurple.color only when button is pressed
         delegate.endBreakBttnPressed()
     }
 
@@ -69,7 +69,7 @@ extension SettingsViewController {
 
     func setupEndSessionView() {
         view.addSubview(endSessionView)
-        endSessionView.backgroundColor = Palette.lightGrey.color //seen in settings during break
+        endSessionView.backgroundColor = UIColor.black //Palette.lightGrey.color //seen in settings during break "end my session button"
         endSessionView.translatesAutoresizingMaskIntoConstraints = false
         endSessionView.widthAnchor.constraint(equalToConstant: viewWidth * (300 / 375)).isActive = true
         endSessionView.heightAnchor.constraint(equalToConstant: viewHeight * (50/667)).isActive = true
@@ -82,7 +82,7 @@ extension SettingsViewController {
         endSessionLabelLeft.font = UIFont(name: "Avenir-Heavy", size: 13)
         endSessionLabelLeft.translatesAutoresizingMaskIntoConstraints = false
         endSessionLabelLeft.text = "end my session"
-        endSessionLabelLeft.textColor = Palette.darkText.color
+        endSessionLabelLeft.textColor = UIColor.white //Palette.darkText.color //end my session Text color
         
         endSessionLabelLeft.leadingAnchor.constraint(equalTo: endSessionView.leadingAnchor, constant: viewWidth * (15 / 375)).isActive = true
         endSessionLabelLeft.centerYAnchor.constraint(equalTo: endSessionView.centerYAnchor, constant: 0).isActive = true
@@ -91,7 +91,7 @@ extension SettingsViewController {
         settingsTotalTimerLabel.font = UIFont(name: "Avenir-Heavy", size: 13)
         settingsTotalTimerLabel.translatesAutoresizingMaskIntoConstraints = false
         settingsTotalTimerLabel.text = "left"
-        settingsTotalTimerLabel.textColor = Palette.darkText.color
+        settingsTotalTimerLabel.textColor = UIColor.white //Palette.darkText.color // session time remaining counting down text color
         settingsTotalTimerLabel.textAlignment = .right
         settingsTotalTimerLabel.isHidden = true
         
@@ -101,7 +101,7 @@ extension SettingsViewController {
     
     func setupEndBreakView() {
         view.addSubview(endBreakView)
-        endBreakView.backgroundColor = Palette.purple.color //seen in settings during break
+        endBreakView.backgroundColor = UIColor.black //Palette.purple.color //seen in settings during break
         endBreakView.translatesAutoresizingMaskIntoConstraints = false
         endBreakView.widthAnchor.constraint(equalToConstant: viewWidth * (300 / 375)).isActive = true
         endBreakView.heightAnchor.constraint(equalToConstant: viewHeight * (50 / 667)).isActive = true
