@@ -216,7 +216,7 @@ extension BreakTimeViewController {
 
     func setupCharacterMessageHeader() {
         characterMessageHeader.numberOfLines = 0
-        characterMessageHeader.textColor = UIColor.white //used to be UIColor.black
+        characterMessageHeader.textColor = UIColor.white //used to be UIColor.black //shown during break "Take a breather" Text color
         characterMessageHeader.textAlignment = .left
         characterMessageHeader.font = UIFont(name: "Avenir-Black", size: 14.0)
 
@@ -237,7 +237,7 @@ extension BreakTimeViewController {
 
     func setupCharacterMessageBody() {
         characterMessageBody.numberOfLines = 0
-        characterMessageBody.textColor = Palette.grey.color
+        characterMessageBody.textColor = UIColor.white //Palette.grey.color //shown during break "Take a breather" Text color
         characterMessageBody.textAlignment = .left
         characterMessageBody.font = UIFont(name: "Avenir-Heavy", size: 14.0)
         
