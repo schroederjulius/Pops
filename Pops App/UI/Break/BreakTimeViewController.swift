@@ -211,7 +211,7 @@ extension BreakTimeViewController {
         coachBottomAnchorConstraint.isActive = true
         coachIcon.centerXAnchor.constraint(equalTo: coachWindowView.centerXAnchor, constant: 0).isActive = true
         coachIcon.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        coachIcon.widthAnchor.constraint(equalToConstant: -9999).isActive = true
+        coachIcon.widthAnchor.constraint(equalToConstant: 52).isActive = true
     }
 
     func setupCharacterMessageHeader() {

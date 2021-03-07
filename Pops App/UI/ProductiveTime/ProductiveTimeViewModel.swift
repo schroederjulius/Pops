@@ -12,6 +12,7 @@ protocol ProductiveTimeViewModelDelegate: class {
     var characterMessageBody: UILabel {get set}
     var progressBar: UIView {get set} //UIView oder
     var cancelSessionButton: UIButton {get set}
+    var coachIcon: UIImageView {get set}
     
     func animateCancelToWeak()
     func moveToBreak()
@@ -123,6 +124,7 @@ final class ProductiveTimeViewModel {
             delegate.progressBar.backgroundColor = UIColor.black
             delegate.characterMessageHeader.textColor = UIColor.black
             delegate.characterMessageBody.textColor = UIColor.black
+            delegate.coachIcon.alpha = 0
             
             if cancelCountdown > 0 {
                 cancelCountdown -= 1
@@ -143,6 +145,7 @@ final class ProductiveTimeViewModel {
             delegate.progressBar.backgroundColor = UIColor.white
             delegate.characterMessageHeader.textColor = UIColor.white
             delegate.characterMessageBody.textColor = UIColor.white
+            delegate.coachIcon.alpha = 1
             
             if cancelCountdown > 0 {
                 cancelCountdown -= 1
