@@ -18,7 +18,7 @@ class HourCollectionViewCell: UICollectionViewCell {
     var timeIsSelected = false {
         didSet {
             time.isSelected = timeIsSelected
-            contentView.backgroundColor = timeIsSelected ?  Palette.darkHeader.color : Palette.lightBlue.color
+            contentView.backgroundColor = timeIsSelected ?  Palette.lightBlue.color : UIColor.black //Palette.darkHeader.color : Palette.lightBlue.color
         }
     }
     

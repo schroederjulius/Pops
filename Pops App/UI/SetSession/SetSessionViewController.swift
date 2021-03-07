@@ -317,7 +317,7 @@ extension SetSessionViewController {
     }
     
     func setupCollectionView() {
-        selectHourCollectionView.backgroundColor = UIColor.black //used to be white
+        selectHourCollectionView.backgroundColor = UIColor.black //used to be white //gap; background zwischen select Hour
         selectHourCollectionView.allowsMultipleSelection = false
         selectHourCollectionView.showsHorizontalScrollIndicator = false
         selectHourCollectionView.delegate = self
