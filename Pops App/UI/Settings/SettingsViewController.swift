@@ -57,7 +57,7 @@ class SettingsViewController: UIViewController, DisplayBreakTimerDelegate {
     }
     
     @objc func endBreakBttnPressed() {
-        endBreakView.backgroundColor = UIColor.black //Palette.darkPurple.color only when button is pressed
+        endBreakView.backgroundColor = Palette.darkPurple.color //UIColor.white //Palette.darkPurple.color only when button is pressed
         delegate.endBreakBttnPressed()
     }
 
