@@ -85,6 +85,7 @@ class ProductiveTimeViewController: UIViewController, ProductiveTimeViewModelDel
             appEnteredForeground()
             viewModel.dataStore.user.currentSession?.mightCancelSession = false
         } else {
+            productivityTimeEndedUserNotificationRequest()
             viewModel.startTimer()
         }
         
