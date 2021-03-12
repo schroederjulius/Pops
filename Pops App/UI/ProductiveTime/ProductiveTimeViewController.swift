@@ -320,3 +320,27 @@ extension ProductiveTimeViewController {
         //self.cancelSessionButton.addTarget(self, action: #selector(self.skipToBreak), for: .touchUpInside) //comment out for production
     }
 }
+    extension ProductiveTimeViewController {
+
+        func productivityTimeEndedUserNotificationRequest() {
+
+            let content = UNMutableNotificationContent()
+            content.title = viewModel.dataStore.user.currentCoach.productivityNotificationStatements[0].header
+            content.body = viewModel.dataStore.user.currentCoach.productivityNotificationStatements[0].body
+            content.sound = UNNotificationSound.default
+            let productivityTimerLength = (viewModel.dataStore.user.currentCoach.difficulty.baseProductivityLength)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(productivityTimerLength), repeats: false)
+
+            let identifier = "UYLLocalNotification"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    print(error)
+                }
+            })
+        }
+
+    }
+    
+
